@@ -14,7 +14,7 @@ app.use('/api/auth', require('./routes/auth'));
 app.use('/api/pastes', require('./routes/paste'));
 
 app.get('/', (req, res) => {
-  res.json({ message: 'Snippet SOS API is running' });
+  res.json({ message: 'PasteSphere API is running' });
 });
 
 app.use((req, res) => {

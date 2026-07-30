@@ -20,40 +20,36 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <div className="container navbar-inner">
+      <div className="navbar-inner">
         <Link to="/" className="navbar-logo">
           <CodeIcon />
-          Snippet<span>SOS</span>
+          PasteSphere
         </Link>
 
         <ul className="navbar-links">
           {user && (
             <>
-              <li><NavLink to="/">My Snippets</NavLink></li>
-              <li><NavLink to="/create">Create Snippet</NavLink></li>
+              <li><NavLink to="/">EXPLORER</NavLink></li>
+              <li><NavLink to="/create">NEW_FILE</NavLink></li>
             </>
           )}
-          <li><NavLink to="/public">Public</NavLink></li>
+          <li><NavLink to="/public">SEARCH</NavLink></li>
         </ul>
 
         <div className="navbar-actions">
           {user ? (
             <>
               <span className="navbar-user">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="12" cy="7" r="4"></circle>
-                </svg>
                 {user.name}
               </span>
               <button className="btn btn-secondary btn-sm" onClick={handleLogout}>
-                Sign out
+                exit
               </button>
             </>
           ) : (
             <>
-              <Link to="/login" className="btn btn-ghost btn-sm">Sign in</Link>
-              <Link to="/register" className="btn btn-primary btn-sm">Register</Link>
+              <Link to="/login" className="btn btn-ghost btn-sm">login</Link>
+              <Link to="/register" className="btn btn-primary btn-sm">register</Link>
             </>
           )}
         </div>

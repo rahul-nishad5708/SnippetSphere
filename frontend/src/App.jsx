@@ -20,25 +20,35 @@ const ProtectedRoute = ({ children }) => {
 
 const AppRoutes = () => {
   return (
-    <>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/public" element={<PublicPastes />} />
-        <Route path="/snippet/:id" element={<ViewPaste />} />
-        <Route
-          path="/create"
-          element={<ProtectedRoute><CreatePaste /></ProtectedRoute>}
-        />
-        <Route
-          path="/edit/:id"
-          element={<ProtectedRoute><EditPaste /></ProtectedRoute>}
-        />
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
-    </>
+    <div className="vscode-window">
+      <div className="vscode-titlebar">
+        <div className="mac-buttons">
+          <div className="mac-close"></div>
+          <div className="mac-min"></div>
+          <div className="mac-max"></div>
+        </div>
+        <div className="vscode-title">PasteSphere - Visual Studio Code</div>
+      </div>
+      <div className="vscode-content">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/public" element={<PublicPastes />} />
+          <Route path="/snippet/:id" element={<ViewPaste />} />
+          <Route
+            path="/create"
+            element={<ProtectedRoute><CreatePaste /></ProtectedRoute>}
+          />
+          <Route
+            path="/edit/:id"
+            element={<ProtectedRoute><EditPaste /></ProtectedRoute>}
+          />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </div>
+    </div>
   );
 };
 

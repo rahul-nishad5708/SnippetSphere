@@ -55,10 +55,12 @@ const Home = () => {
     return (
       <div className="container page-wrapper">
         <div className="empty-state" style={{ paddingTop: 80 }}>
-          <div className="empty-state-icon">📋</div>
-          <div className="empty-state-title">Welcome to Snippet SOS</div>
+          <div className="empty-state-icon">~/pastesphere $</div>
+          <div className="empty-state-title">Welcome to PasteSphere</div>
           <p className="empty-state-sub">
-            Save, share, and organize your code snippets and notes.
+            {'>'} initialize_workspace();
+            <br/>
+            {'>'} save, share, and organize code snippets.
           </p>
           <div style={{ display: 'flex', gap: 10, justifyContent: 'center' }}>
             <Link to="/register" className="btn btn-primary">Get started</Link>
@@ -117,12 +119,12 @@ const Home = () => {
         </div>
       ) : filtered.length === 0 ? (
         <div className="empty-state">
-          <div className="empty-state-icon">{search ? '🔍' : '📄'}</div>
+          <div className="empty-state-icon">{search ? '> search --results 0' : '~/pastesphere $'}</div>
           <div className="empty-state-title">
-            {search ? 'No snippets match your search' : 'No snippets yet'}
+            {search ? 'Error: No snippets match your query' : 'No snippets initialized'}
           </div>
           <p className="empty-state-sub">
-            {search ? 'Try a different search term.' : 'Create your first snippet to get started.'}
+            {search ? '> Please try a different argument.' : '> Create your first snippet to get started.'}
           </p>
           {!search && (
             <Link to="/create" className="btn btn-primary">Create snippet</Link>

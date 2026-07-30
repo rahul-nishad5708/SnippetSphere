@@ -1,34 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
-  --bg-primary: #0d1117;
-  --bg-secondary: #161b22;
-  --bg-tertiary: #21262d;
-  --bg-hover: #30363d;
-  --border: #30363d;
-  --border-focus: #58a6ff;
+  /* VS Code Dark / Terminal Aesthetic */
+  --bg-primary: #1e1e1e;
+  --bg-secondary: #252526;
+  --bg-tertiary: #2d2d30;
+  --bg-hover: #3e3e42;
+  --border: #3c3c3c;
+  --border-focus: #007acc;
 
-  --text-primary: #e6edf3;
-  --text-secondary: #8b949e;
-  --text-muted: #6e7681;
+  --text-primary: #d4d4d4;
+  --text-secondary: #cccccc;
+  --text-muted: #858585;
 
-  --accent: #58a6ff;
-  --accent-hover: #79c0ff;
-  --green: #3fb950;
-  --red: #f85149;
-  --yellow: #d29922;
-  --purple: #bc8cff;
-  --orange: #ffa657;
+  --accent: #007acc;
+  --accent-hover: #0098ff;
+  --green: #4ec9b0; /* VS Code Class Green */
+  --red: #f48771;
+  --yellow: #dcdcaa; /* VS Code Function Yellow */
+  --purple: #c586c0; /* VS Code Keyword Purple */
+  --orange: #ce9178; /* VS Code String Orange */
 
-  --radius-sm: 4px;
-  --radius-md: 6px;
-  --radius-lg: 10px;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
 
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace; /* Monospace Everything */
   --font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
 
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --shadow-sm: none;
+  --shadow-md: none;
 }
 
 *,
@@ -89,6 +90,7 @@ a:hover {
   justify-content: space-between;
   height: 100%;
   gap: 24px;
+  padding: 0 16px;
 }
 
 .navbar-logo {
@@ -96,9 +98,11 @@ a:hover {
   align-items: center;
   gap: 8px;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 14px;
   color: var(--text-primary);
   text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .navbar-logo span {
@@ -168,14 +172,14 @@ a:hover {
 
 .btn-primary {
   background: var(--accent);
-  color: #0d1117;
+  color: #ffffff;
   border-color: var(--accent);
 }
 
 .btn-primary:hover:not(:disabled) {
   background: var(--accent-hover);
   border-color: var(--accent-hover);
-  color: #0d1117;
+  color: #ffffff;
 }
 
 .btn-secondary {
@@ -300,11 +304,12 @@ a:hover {
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 18px;
-  transition: border-color 0.15s;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.5); /* Hard shadow for terminal feel */
 }
 
 .card:hover {
-  border-color: #444d56;
+  border-color: var(--border-focus);
 }
 
 .snippet-card {
@@ -807,13 +812,68 @@ a:hover {
 }
 
 @keyframes pulse {
-
-  0%,
-  100% {
+  0%, 100% {
     opacity: 1;
   }
-
   50% {
     opacity: 0.4;
   }
+}
+
+body {
+  overflow: hidden;
+}
+
+/* VS Code Window Frame Layout */
+.vscode-window {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--bg-primary);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.vscode-titlebar {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+  padding: 0 12px;
+  flex-shrink: 0;
+  gap: 16px;
+}
+
+.mac-buttons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.mac-buttons div {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.mac-close { background-color: #ff5f56; }
+.mac-min { background-color: #ffbd2e; }
+.mac-max { background-color: #27c93f; }
+
+.vscode-title {
+  font-size: 12px;
+  color: var(--text-muted);
+  flex: 1;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  padding-right: 60px; /* Offset to center text visually */
+}
+
+.vscode-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow-y: auto;
 }

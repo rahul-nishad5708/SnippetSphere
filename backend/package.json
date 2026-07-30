@@ -1,7 +1,7 @@
 {
-  "name": "codepaste-hub-backend",
+  "name": "pastesphere-backend",
   "version": "1.0.0",
-  "description": "Backend API for Snippet SOS",
+  "description": "Backend API for PasteSphere",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
