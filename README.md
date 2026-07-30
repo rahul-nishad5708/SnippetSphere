@@ -1,6 +1,6 @@
-# Snippet SOS – A Developer Snippet & Paste Management Platform
+# PasteSphere – A Developer Snippet & Paste Management Platform
 
-Snippet SOS is a professional, developer-focused platform designed to help you create, store, manage, and share text pastes securely. Whether you are dealing with code snippets, terminal commands, quick notes, or configuration files, Snippet SOS provides a clean, minimal interface inspired by the best developer tools.
+PasteSphere is a professional, developer-focused platform designed to help you create, store, manage, and share text pastes securely. Whether you are dealing with code snippets, terminal commands, quick notes, or configuration files, PasteSphere provides a clean, minimal interface inspired by the best developer tools.
 
 ---
 
@@ -8,7 +8,7 @@ Snippet SOS is a professional, developer-focused platform designed to help you c
 
 Developers frequently deal with temporary snippets of code, reusable logic, system configurations, and terminal commands. While fully-fledged version control is great for entire projects, it's often too heavy for quick sharing or storing a single script. Sending code over messaging platforms breaks formatting, and existing paste tools are often cluttered with ads or lacking modern developer-first features.
 
-Snippet SOS solves this by offering a fast, clean, and organized space to save and retrieve your snippets locally, categorizing them via tags and favorites, making them instantly accessible and easily shareable.
+PasteSphere solves this by offering a fast, clean, and organized space to save and retrieve your snippets locally, categorizing them via tags and favorites, making them instantly accessible and easily shareable.
 
 ---
 
@@ -33,7 +33,7 @@ Snippet SOS solves this by offering a fast, clean, and organized space to save a
 
 ## Tech Stack
 
-Snippet SOS is built using the **MERN** stack for a robust, scalable architecture.
+PasteSphere is built using the **MERN** stack for a robust, scalable architecture.
 
 **Frontend:**
 - **React.js** (Bootstrapped with Vite)
@@ -55,7 +55,7 @@ Snippet SOS is built using the **MERN** stack for a robust, scalable architectur
 
 ## Architecture Overview
 
-Snippet SOS follows a standard client-server architecture:
+PasteSphere follows a standard client-server architecture:
 1. **Frontend (React)**: Handles the user interface, component state, form validation, and client-side routing. It stores the JWT token locally and attaches it to authenticated requests.
 2. **Backend (Express API)**: Exposes RESTful endpoints for authentication and paste management. It contains middleware to verify tokens and optionally authenticate open endpoints (like viewing public pastes).
 3. **Database (MongoDB)**: Stores `Users` and `Pastes` collections securely. Uses Mongoose for schema validation.
@@ -114,8 +114,8 @@ To run this project locally, follow these steps:
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/snippet-sos.git
-cd snippet-sos
+git clone https://github.com/yourusername/pastesphere.git
+cd pastesphere
 ```
 
 ### 2. Backend Setup
